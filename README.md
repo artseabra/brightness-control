@@ -2,59 +2,48 @@
 
 ## Overview
 
-This Raycast extension provides enhanced brightness control for macOS, allowing users to adjust screen brightness in larger increments than the default system controls.
+This Raycast extension provides enhanced brightness control for macOS, allowing users to adjust screen brightness in larger increments and set custom brightness levels.
 
 ## Features
 
 1. **Brightness Up**: Increases screen brightness by approximately 25%.
 2. **Brightness Down**: Decreases screen brightness by approximately 25%.
-
-## Technical Details
-
-### Implementation
-
-- The extension uses AppleScript to simulate key presses for brightness adjustment.
-- Each command (up/down) repeats the brightness change action 10 times, resulting in roughly a 25% change.
-- The extension directly interfaces with macOS's brightness control, bypassing the need for additional permissions or system modifications.
-
-### File Structure
-
-- `src/up.ts`: Handles the brightness increase command.
-- `src/down.ts`: Handles the brightness decrease command.
-- `src/script.ts`: Contains the shared AppleScript generation logic.
-
-### Key Components
-
-1. **makeScript Function** (in `script.ts`):
-   - Generates the AppleScript for brightness adjustment.
-   - Uses key codes 144 (brightness up) and 145 (brightness down).
-
-2. **Command Execution** (in `up.ts` and `down.ts`):
-   - Runs the generated AppleScript.
-   - Closes the Raycast window immediately after execution.
+3. **Set Custom Brightness**: Allows setting a specific brightness level (0-100%).
 
 ## Usage
 
 1. Open Raycast.
-2. Type "Brightness Up" or "Brightness Down" to access the commands.
-3. Execute the desired command to adjust screen brightness.
+2. Type "Brightness Up" or "Brightness Down" to access the quick adjustment commands.
+3. Type "Set Custom Brightness" to access the custom brightness setting command.
+4. Enter a value between 0 and 100 to set the desired brightness level.
 
-## Development Notes
+## Technical Details
 
-- The extension was developed iteratively, with several refinements to improve accuracy and user experience.
-- Initial versions included brightness change calculations and user feedback, which were later removed for simplicity and reliability.
-- The current version focuses on quick and effective brightness adjustments without additional feedback beyond the system's built-in brightness indicator.
+- The extension uses AppleScript to simulate key presses for brightness adjustment.
+- Custom brightness setting first reduces brightness to minimum, then increases to the desired level for more accurate results.
+- The extension directly interfaces with macOS's brightness control, bypassing the need for additional permissions or system modifications.
 
-## Future Enhancements
+## Known Limitations
 
-- Potential addition of custom brightness presets.
-- Exploration of more precise brightness control methods.
+- The custom brightness setting may not always be 100% accurate due to the method used for adjustment.
+- Rapid consecutive adjustments may sometimes lead to unexpected results.
 
 ## Troubleshooting
 
 If the brightness change seems too drastic or not noticeable:
-1. Adjust the number of repetitions in the `makeScript` function.
-2. Test on different Mac models, as brightness behavior can vary.
+1. Try adjusting the number of repetitions in the `makeScript` function in `src/script.ts`.
+2. Ensure you're running the latest version of the extension.
+3. Test on different Mac models, as brightness behavior can vary.
+
+## Development
+
+To contribute to this project:
+
+1. Clone the repository.
+2. Install dependencies with `npm install`.
+3. Make your changes.
+4. Build the extension with `npm run build`.
+5. Test your changes with `npm run dev`.
 
 ## Contributors
 
@@ -63,4 +52,3 @@ If the brightness change seems too drastic or not noticeable:
 ## License
 
 [Specify your license here, e.g., MIT License]
-

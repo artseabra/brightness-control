@@ -24,6 +24,12 @@
     "title": "Brightness Down",
     "description": "Decreases the brightness of your display by approximately 25%.",
     "mode": "no-view"
+  },
+  {
+    "name": "custom",
+    "title": "Set Custom Brightness",
+    "description": "Set a custom brightness level for your display.",
+    "mode": "no-view"
   }
 ],
   "dependencies": {
