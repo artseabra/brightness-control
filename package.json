@@ -1,8 +1,8 @@
 {
   "$schema": "https://www.raycast.com/schemas/extension.json",
-  "name": "brightness-control",
-  "title": "Brightness Control",
-  "description": "Quickly controls the brightness levels of your display",
+  "name": "custom-brightness-control",
+  "title": "Custom Brightness Control",
+  "description": "Quickly controls the brightness levels of your display.",
   "icon": "command-icon.png",
   "author": "cali",
   "contributors": [
