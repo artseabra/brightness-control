@@ -19,5 +19,11 @@ export const makeScript = (action: BrightnessAction) => {
       break;
   }
 
-  return `tell application "System Events" to key code ${keyCode}`;
+  return `
+    tell application "System Events"
+      repeat 10 times
+        key code ${keyCode}
+      end repeat
+    end tell
+  `;
 };

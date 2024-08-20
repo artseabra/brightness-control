@@ -5,26 +5,27 @@
   "description": "Quickly controls the brightness levels of your display",
   "icon": "command-icon.png",
   "author": "cali",
+  "contributors": [
+    "artseabra"
+  ],
   "categories": [
     "System"
   ],
   "license": "MIT",
-  "commands": [
-    {
-      "name": "up",
-      "title": "Brightness Up",
-      "description": "Increases the brightness by 10% of your display",
-      "mode": "no-view",
-      "icon": "brightness-up.png"
-    },
-    {
-      "name": "down",
-      "title": "Brightness Down",
-      "description": "Decreases the brightness by 10% of your display",
-      "mode": "no-view",
-      "icon": "brightness-down.png"
-    }
-  ],
+"commands": [
+  {
+    "name": "up",
+    "title": "Brightness Up",
+    "description": "Increases the brightness of your display by approximately 25%.",
+    "mode": "no-view"
+  },
+  {
+    "name": "down",
+    "title": "Brightness Down",
+    "description": "Decreases the brightness of your display by approximately 25%.",
+    "mode": "no-view"
+  }
+],
   "dependencies": {
     "@raycast/api": "^1.38.2",
     "run-applescript": "^6.0.0"
