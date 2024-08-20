@@ -46,7 +46,7 @@ To contribute to this project:
 5. Test your changes with `npm run dev`.
 
 ## Contributors
-
+- [Cali Castle/CaliCastle]
 - [Art Seabra/artseabra]
 
 ## License
